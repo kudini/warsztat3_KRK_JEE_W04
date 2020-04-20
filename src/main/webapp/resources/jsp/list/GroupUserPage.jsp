@@ -7,11 +7,11 @@
 --%>
 
 <html>
-<%@ include file="Header.jsp" %>
+<%@ include file="../utils/Header.jsp" %>
 
 <body>
 
-<%@ include file="NavBar.jsp" %>
+<%@ include file="../utils/NavBar.jsp" %>
 <div class="main-content">
     <div class="main-field">
         <div><h2 class="main-header">${groupName} group users:</h2></div>

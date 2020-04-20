@@ -2,12 +2,21 @@
 #navbar {
     overflow: hidden;
     background-color: #333;
+    min-width: 678px;
+    grid-area: 1 / 1 / 2 / 6;
 }
 
-#main-page-nav .logo-1 {
+#main-page-nav a {
     background-color: #33443b;
     border-radius: 0px 70px;
-    padding: 40px;
+    margin: auto;
+    width: 150px;
+}
+
+.logo-1 {
+    background-color: #33443b;
+    border-radius: 0px 70px;
+    font-size: 30px;
 }
 
 #main-page-nav {
@@ -29,6 +38,7 @@
     padding: 18px;
     text-decoration: underline;
 }
+
 /*Buttons*/
 .back-btn a {
     border-radius: 25px 5px 5px 25px;
@@ -49,6 +59,7 @@
     margin: auto;
     padding: 18px;
 }
+
 .users-btn {
     border-radius: 25px 5px 5px 25px;
     background-color: #bfb894;
@@ -66,11 +77,13 @@
     padding: 10px;
     text-decoration: none;
 }
+
 .details-btn a {
     color: #fefefe;
     text-decoration: none;
 }
-.details-btn{
+
+.details-btn {
     border-radius: 25px 5px 5px 25px;
     border-style: solid;
     border-color: #bbce61;
@@ -87,6 +100,7 @@
     padding: 10px;
     text-decoration: none;
 }
+
 .edit-btn {
 
 }
@@ -129,7 +143,27 @@
 
 
 /*Table styles*/
+.table-main-style-panels {
+    min-width: 400px;
+    border-spacing: 3px;
+}
+
+.table-main-style-panels tr {
+    background-color: #6d6859;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.table-main-style-panels a {
+    text-decoration: none;
+    padding-left: 35%;
+    padding-right: 35%;
+    color: #ebebeb;
+    text-align: center;
+}
+
 .table-main-style {
+    min-width: 400px;
     border-spacing: 0;
 }
 
@@ -156,7 +190,7 @@
 body {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
@@ -165,36 +199,32 @@ body {
     border-top-style: solid;
     border-top-width: 15px;
     border-top-color: #ffffff;
-    grid-area: 2 / 2 / 6 / 5;
-}
-
-.main-content {
+    min-width: 424px;
+    grid-area: 2 / 2 / span 9/ 5;
     max-width: 60%;
     background-color: #a2a2a2;
     padding-left: 20%;
     padding-right: 20%;
     background-color: #858585;
     height: 100%;
+    position: relative;
 }
 
-#navbar {
-    grid-area: 1 / 1 / 2 / 6;
-}
-.main-header{
+.main-header {
     background-color: #b5b5b5;
     padding: 10px;
     max-width: 200px;
-    border-bottom-style: solid;
+    border-bottom-style: double;
     border-bottom-color: #ebebeb;
-    border-bottom-width: 5px;
+    border-bottom-width: 4px;
 }
+
 .main-field {
     position: relative;
 }
-.main-content{
-    position: relative;
-}
-.sub-content{
+
+
+.sub-content {
     float: inside;
     position: absolute;
     left: 50%;

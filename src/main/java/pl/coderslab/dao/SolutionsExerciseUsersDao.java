@@ -17,6 +17,9 @@ public class SolutionsExerciseUsersDao {
                     "";
     private static final String FIND_ALL_SOLUTION_BY_ID_QUERY =
             "SELECT users_id as user_id,solutions.id as solution_id, username as username,exercise_id, title as exercise_name , solutions.updated as date_updated FROM solutions JOIN users u on solutions.users_id = u.id JOIN exercises e on solutions.exercise_id = e.id WHERE users_id=?";
+    private static final String FIND_ALL_SOLUTION_BY_EXERCISE_ID_QUERY =
+            "SELECT users_id as user_id,solutions.id as solution_id, username as username,exercise_id, title as exercise_name , solutions.updated as date_updated FROM solutions JOIN users u on solutions.users_id = u.id JOIN exercises e on solutions.exercise_id = e.id WHERE exercise_id=?";
+
 
     //
 //    public Solutions read(int solutionId) {
@@ -90,5 +93,28 @@ public class SolutionsExerciseUsersDao {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public SolutionsExerciseUsers[] findAllbyExerciseId(int exerciseId) {
+            try (Connection conn = DBUtils.getConnection()) {
+                SolutionsExerciseUsers[] solutionsExerciseUsers = new SolutionsExerciseUsers[0];
+                PreparedStatement statement = conn.prepareStatement(FIND_ALL_SOLUTION_BY_EXERCISE_ID_QUERY);
+                statement.setInt(1, exerciseId);
+                ResultSet resultSet = statement.executeQuery();
+                while (resultSet.next()) {
+                    SolutionsExerciseUsers solutionsExerciseUsers1 = new SolutionsExerciseUsers();
+                    solutionsExerciseUsers1.setUserId(resultSet.getInt("user_id"));
+                    solutionsExerciseUsers1.setSolutionId(resultSet.getInt("solution_id"));
+                    solutionsExerciseUsers1.setUpdated(resultSet.getDate("date_updated"));
+                    solutionsExerciseUsers1.setExerciseName(resultSet.getString("exercise_name"));
+                    solutionsExerciseUsers1.setExerciseId(resultSet.getInt("exercise_id"));
+                    solutionsExerciseUsers1.setUsername(resultSet.getString("username"));
+                    solutionsExerciseUsers = addToArray(solutionsExerciseUsers1, solutionsExerciseUsers);
+                }
+                return solutionsExerciseUsers;
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return null;
+            }
     }
 }

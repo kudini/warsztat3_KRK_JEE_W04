@@ -16,6 +16,6 @@ public class GroupsInfo extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UsersGroups[] usersGroups = usersDao.findAll();
         request.setAttribute("usersGroups",usersGroups);
-        getServletContext().getRequestDispatcher("/resources/GroupPage.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/resources/jsp/list/GroupPage.jsp").forward(request, response);
     }
 }

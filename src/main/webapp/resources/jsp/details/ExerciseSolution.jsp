@@ -5,32 +5,34 @@
   Time: 13:55
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
+
+<%@ include file="../utils/Header.jsp" %>
+
 <body>
+
+<%@ include file="../utils/NavBar.jsp" %>
+
 <div class="main-content">
     <div class="main-content-header">
         <div class="main-content-nav">
-            <button class="back-btn"></button><br>
+            <div class="back-btn">
+                <a href="/">Back</a>
+            </div>
         </div>
-        <p><h2>Admin Panel</h2></p>
+        <p>
+        <h2 class="main-header">Solution details:</h2></p>
     </div>
     <div class="sub-content">
         <div class="sub-content-table">
             <table>
                 <tr>
-                    <td><a href="">User Groups</a></td>
-
-                </tr>
-                <tr>
-                    <td><a href="">Users</a></td>
+                    <td>${solution.getDescription()}</td>
                 </tr>
             </table>
         </div>
     </div>
 </div>
+
 </body>
 </html>

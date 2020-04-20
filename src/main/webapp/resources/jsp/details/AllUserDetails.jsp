@@ -6,16 +6,17 @@
   To change this template use File | Settings | File Templates.
 --%>
 <html>
-<%@ include file="Header.jsp" %>
+<%@ include file="../utils/Header.jsp" %>
 
 <body>
 
-<%@ include file="NavBar.jsp" %>
+<%@ include file="../utils/NavBar.jsp" %>
 <div class="main-content">
     <div class="main-content-header">
         <div class="main-content-nav">
-            <button class="back-btn"></button>
-            <br>
+            <div class="back-btn">
+                <a href="/users">Back</a>
+            </div>
         </div>
         <p>
         <h2 class="main-header">${user.getUsername()} user details:</h2></p>

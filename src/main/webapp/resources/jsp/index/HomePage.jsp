@@ -2,11 +2,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="pl">
 
-<%@ include file="Header.jsp" %>
+<%@ include file="../utils/Header.jsp" %>
 
 <body>
 
-<%@ include file="NavBar.jsp" %>
+<%@ include file="../utils/NavBar.jsp" %>
 
 <div class="main-content">
     <div class="main-content-header">

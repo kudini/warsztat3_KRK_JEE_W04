@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "UserDetails", urlPatterns = "/groups/group/user")
-public class UserDetails extends HttpServlet {
+@WebServlet(name = "UserDetails", urlPatterns = "/users/user")
+public class AllUserDetails extends HttpServlet {
     UsersDao usersDao = new UsersDao();
     SolutionsExerciseUsersDao solutionsExerciseUsersDao = new SolutionsExerciseUsersDao();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,6 +26,6 @@ public class UserDetails extends HttpServlet {
         SolutionsExerciseUsers[] usersSolutionsList= solutionsExerciseUsersDao.findAllbyId(userId);
         request.setAttribute("solutions",usersSolutionsList);
         request.setAttribute("user",user);
-        getServletContext().getRequestDispatcher("/resources/jsp/details/GroupUserDetails.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/resources/jsp/details/AllUserDetails.jsp").forward(request, response);
     }
 }

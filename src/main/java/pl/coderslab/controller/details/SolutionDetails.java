@@ -21,6 +21,6 @@ public class SolutionDetails extends HttpServlet {
         int solutionsID = Integer.parseInt(request.getParameter("solution_id"));
         Solutions solution = solutionsDao.read(solutionsID);
         request.setAttribute("solution",solution);
-        getServletContext().getRequestDispatcher("/resources/ExerciseSolution.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/resources/jsp/details/ExerciseSolution.jsp").forward(request, response);
     }
 }
