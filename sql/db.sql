@@ -1,10 +1,9 @@
-DROP DATABASE warsztat2krajee04;
+DROP DATABASE warsztat3krajee04;
 
-CREATE DATABASE warsztat2krajee04
+CREATE DATABASE warsztat3krajee04
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_Ci;
-
-USE warsztat2krajee04;
+USE warsztat3krajee04;
 
 CREATE TABLE users(
                      id INT AUTO_INCREMENT,

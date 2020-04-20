@@ -1,0 +1,202 @@
+/* Style the navbar */
+#navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+#main-page-nav .logo-1 {
+    background-color: #33443b;
+    border-radius: 0px 70px;
+    padding: 40px;
+}
+
+#main-page-nav {
+    float: left;
+    display: block;
+    color: #ebebeb;
+    text-align: center;
+    text-decoration: underline;
+    background-color: #42584c;
+    border-radius: 0px 70px;
+    padding: 18px;
+}
+
+#main-page-nav a {
+    float: left;
+    display: block;
+    color: #ebebeb;
+    text-align: center;
+    padding: 18px;
+    text-decoration: underline;
+}
+/*Buttons*/
+.back-btn a {
+    border-radius: 25px 5px 5px 25px;
+    background-color: #bf8f35;
+    border-style: solid;
+    border-color: #e9b63f;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 7px;
+    border-right-color: #8e6a25;
+    float: right;
+    display: block;
+    color: #fefefe;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    margin: auto;
+    padding: 18px;
+}
+.users-btn {
+    border-radius: 25px 5px 5px 25px;
+    background-color: #bfb894;
+    border-style: solid;
+    border-color: #bbce61;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 7px;
+    border-right-color: #83944a;
+    float: left;
+    display: block;
+    color: #fefefe;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+.details-btn a {
+    color: #fefefe;
+    text-decoration: none;
+}
+.details-btn{
+    border-radius: 25px 5px 5px 25px;
+    border-style: solid;
+    border-color: #bbce61;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 7px;
+    border-right-color: #83944a;
+    background-color: #aebf6f;
+    float: left;
+    display: block;
+    color: #fefefe;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+.edit-btn {
+
+}
+
+/* Navbar links */
+#main-nav-content {
+    float: right;
+    display: block;
+    color: #b0b0b0;
+    text-align: center;
+    padding: 18px;
+    text-decoration: none;
+}
+
+#main-nav-content a {
+    float: left;
+    display: block;
+    color: #b0b0b0;
+    text-align: center;
+    padding: 18px;
+    text-decoration: none;
+}
+
+/* Page content */
+.content {
+    padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+    padding-top: 60px;
+}
+
+
+/*Table styles*/
+.table-main-style {
+    border-spacing: 0;
+}
+
+.table-main-style-header {
+    background-color: #5c5c5c;
+    color: #ebebeb;
+    text-align: center;
+    /*border-bottom: 80px;*/
+    /*border-bottom-color: #bf8f35;*/
+}
+
+.table-main-style-body {
+    background-color: #737373;
+    color: #ebebeb;
+    text-align: center;
+}
+
+.table-main-style td {
+    padding: 10px;
+    border-bottom: #bf8f35;
+    border-bottom-width: 1px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.main-content {
+    border-top-style: solid;
+    border-top-width: 15px;
+    border-top-color: #ffffff;
+    grid-area: 2 / 2 / 6 / 5;
+}
+
+.main-content {
+    max-width: 60%;
+    background-color: #a2a2a2;
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: #858585;
+    height: 100%;
+}
+
+#navbar {
+    grid-area: 1 / 1 / 2 / 6;
+}
+.main-header{
+    background-color: #b5b5b5;
+    padding: 10px;
+    max-width: 200px;
+    border-bottom-style: solid;
+    border-bottom-color: #ebebeb;
+    border-bottom-width: 5px;
+}
+.main-field {
+    position: relative;
+}
+.main-content{
+    position: relative;
+}
+.sub-content{
+    float: inside;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0)
+}

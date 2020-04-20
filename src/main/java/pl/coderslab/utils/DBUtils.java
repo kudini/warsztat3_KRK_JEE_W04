@@ -1,18 +1,28 @@
 package pl.coderslab.utils;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBUtils {
-    private static String DB_NAME = "warsztat2krajee04";
-    private static String DB_URL="jdbc:mariadb://localhost:3306/"+DB_NAME+"?encoding=utf8";
-    private static String DB_USER="root";
-    private static String DB_PASS="coderslab";
+    private static DataSource dataSource;
 
     public static Connection getConnection() throws SQLException {
-        Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
+        return getInstance().getConnection();
+    }
 
-        return con;
+    private static DataSource getInstance() {
+        if (dataSource == null) {
+            try {
+                Context context = new InitialContext();
+                dataSource = (DataSource) context.lookup("java:comp/env/jdbc/warsztat3krajee04");
+            } catch (NamingException e) {
+                e.printStackTrace();
+            }
+        }
+        return dataSource;
     }
 }

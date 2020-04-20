@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class UsersDao {
 
     private static final String CREATE_USER_QUERY =
-            "INSERT INTO users(username, email, password, user_group_id) VALUES (?, ?, ?,?)";
+            "INSERT INTO users(username, email, password, users_group_id) VALUES (?, ?, ?,?)";
     private static final String READ_USER_QUERY =
             "SELECT * FROM users where id = ?";
     private static final String UPDATE_USER_QUERY =
@@ -21,6 +21,8 @@ public class UsersDao {
             "DELETE FROM users WHERE id = ?";
     private static final String FIND_ALL_USERS_QUERY =
             "SELECT * FROM users";
+    private static final String FIND_ALL_BY_ID_USERS_QUERY =
+            "SELECT * FROM users WHERE users_group_id = ?";
 
 
     public Users create(Users user) {
@@ -53,7 +55,7 @@ public class UsersDao {
                 user.setUsername(resultSet.getString("username"));
                 user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("password"));
-                user.setUserGroupId(resultSet.getInt("user_group_id"));
+                user.setUserGroupId(resultSet.getInt("users_group_id"));
                 return user;
             }
 
@@ -106,5 +108,26 @@ public class UsersDao {
         Users[] tmpUsers= Arrays.copyOf(users,users.length+1);
         tmpUsers[users.length]=user;
         return tmpUsers;
+    }
+
+    public Users[] findAllbyId(int userGroupId) {
+        try (Connection conn = DBUtils.getConnection()) {
+            Users[] users = new Users[0];
+            PreparedStatement statement = conn.prepareStatement(FIND_ALL_BY_ID_USERS_QUERY);
+            statement.setInt(1, userGroupId);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Users user = new Users();
+                user.setId(resultSet.getInt("id"));
+                user.setUsername(resultSet.getString("username"));
+                user.setEmail(resultSet.getString("email"));
+                user.setPassword(resultSet.getString("password"));
+                users = addToArray(user, users);
+            }
+            return users;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

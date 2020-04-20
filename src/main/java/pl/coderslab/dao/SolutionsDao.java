@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class SolutionsDao {
 
     private static final String CREATE_SOLUTION_QUERY =
-            "INSERT INTO solutions(created, updated , description, exercise_id, user_id) VALUES (? , ? , ? , ? , ?)";
+            "INSERT INTO solutions(created, updated , description, exercise_id, users_id) VALUES (? , ? , ? , ? , ?)";
     private static final String READ_SOLUTION_QUERY =
             "SELECT * FROM solutions where id = ?";
     private static final String UPDATE_SOLUTION_QUERY =
@@ -22,9 +22,11 @@ public class SolutionsDao {
     private static final String FIND_ALL_SOLUTION_QUERY =
             "SELECT * FROM solutions";
     private static final String FIND_ALL_USERID_QUERY =
-            "SELECT * FROM solutions WHERE user_id= ?";
+            "SELECT * FROM solutions WHERE users_id= ?";
     private static final String FIND_ALL_EXERCISEID_QUERY =
             "SELECT * FROM solutions WHERE exercise_id= ?";
+    private static final String FIND_ALL_RECENT_SOLUTION_QUERY =
+            "SELECT * FROM solutions ORDER BY updated DESC LIMIT ?" ;
 
     public Solutions create(Solutions solutions) {
         try (Connection connection = DBUtils.getConnection()) {
@@ -58,7 +60,7 @@ public class SolutionsDao {
                 solutions.setUpdated(resultSet.getDate("updated"));
                 solutions.setDescription(resultSet.getString("description"));
                 solutions.setExcerciseId(resultSet.getInt("exercise_id"));
-                solutions.setUsersId(resultSet.getInt("user_id"));
+                solutions.setUsersId(resultSet.getInt("users_id"));
                 return solutions;
             }
 
@@ -66,6 +68,28 @@ public class SolutionsDao {
             e.printStackTrace();
         }
         return null;
+    }
+    public Solutions[] findRecent(int numberOfElements){
+        try (Connection conn = DBUtils.getConnection()) {
+            Solutions[] solutionsGroup = new Solutions[0];
+            PreparedStatement statement = conn.prepareStatement(FIND_ALL_RECENT_SOLUTION_QUERY);
+            statement.setInt(1,numberOfElements);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Solutions solutions = new Solutions();
+                solutions.setId(resultSet.getInt("id"));
+                solutions.setCreated(resultSet.getDate("created"));
+                solutions.setUpdated(resultSet.getDate("updated"));
+                solutions.setDescription(resultSet.getString("description"));
+                solutions.setExcerciseId(resultSet.getInt("exercise_id"));
+                solutions.setUsersId(resultSet.getInt("users_id"));
+                solutionsGroup = addToArray(solutions, solutionsGroup);
+            }
+            return solutionsGroup;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
     public Solutions[] findAll() {
         try (Connection conn = DBUtils.getConnection()) {
