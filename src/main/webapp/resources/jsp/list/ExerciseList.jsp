@@ -21,16 +21,16 @@
                 </tr>
                 </thead>
                 <tbody class="table-main-style-body">
-                <c:forEach items="${exercises}" var="exercise">
+                <c:forEach items="${exercises}" var="users">
                     <tr>
-                        <td>${exercise.getTitle()}</td>
-                        <td>${exercise.getDescription()}</td>
+                        <td>${users.getTitle()}</td>
+                        <td>${users.getDescription()}</td>
                         <td class="actions-table-1">
                             <div class="details-btn">
-                                <a href="${pageContext.request.contextPath}/app/solutions/list?exercise_id=${exercise.getId()}">List</a>
+                                <a href="${pageContext.request.contextPath}/app/solutions/list?exercise_id=${users.getId()}">List</a>
                             </div>
                             <div class="add-btn-table">
-                                <a href="${pageContext.request.contextPath}/app/user/solution/add?exercise_id=${exercise.getId()}">Add</a>
+                                <a href="${pageContext.request.contextPath}/app/user/solution/add?exercise_id=${users.getId()}">Add</a>
                             </div>
                         </td>
                     </tr>

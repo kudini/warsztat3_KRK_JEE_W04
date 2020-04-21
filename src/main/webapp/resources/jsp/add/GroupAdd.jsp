@@ -15,9 +15,9 @@
     <div class="main-content-header">
         <h2>Add Group</h2>
         <div class="sub-content">
-            <form action="", method="POST" id="group_form">
+            <form action="" , method="POST" id="group_form">
                 <span>Group name</span>
-                <input type="text">
+                <input type="text" name="group" placeholder="user group name">
 
             </form>
             <br>

@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.sql.Date;
-import java.sql.SQLData;
 
 @WebServlet(name = "SolutionAdd", urlPatterns = "/app/user/solution/add")
 public class SolutionAdd extends HttpServlet {
@@ -29,12 +27,11 @@ public class SolutionAdd extends HttpServlet {
             Solutions solutions = new Solutions(created, created, description, excerciseId, users.getId());
             solutionsDao.create(solutions);
         }
-        response.sendRedirect("app/exercises");
+        response.sendRedirect("/app/exercises");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         excerciseId = Integer.parseInt(request.getParameter("exercise_id"));
-
         getServletContext().getRequestDispatcher("/resources/jsp/add/UserSolutionAdd.jsp").forward(request, response);
     }
 

@@ -10,26 +10,25 @@
 
 <div class="main-content">
     <div class="main-content-header">
-        <h2 class="main-header">Last submissions</h2>
+        <h2 class="main-header">Users in database:</h2>
         <div class="sub-content">
             <table class="table-main-style">
                 <thead class="table-main-style-header">
                 <tr>
-                    <td>Exercise Name</td>
-                    <td>Solution author</td>
-                    <td>Date</td>
+                    <td>Username</td>
                     <td>Actions</td>
                 </tr>
                 </thead>
                 <tbody class="table-main-style-body">
-                <c:forEach items="${solutionList}" var="users">
+                <c:forEach items="${usersList}" var="users">
                     <tr>
-                        <td>${users.getExerciseName()}</td>
                         <td>${users.getUsername()}</td>
-                        <td>${users.getUpdated()}</td>
                         <td>
                             <div class="details-btn">
-                                <a href="${pageContext.request.contextPath}/app/solutions/details?solution_id=${users.getSolutionId()}">Details</a>
+                                <a href="${pageContext.request.contextPath}/app/admin/users/edit?user_id=${users.getId()}">Edit</a>
+                            </div>
+                            <div class="delete-btn">
+                                <a href="${pageContext.request.contextPath}/app/admin/users/delete?user_id=${users.getId()}">Delete</a>
                             </div>
                         </td>
                     </tr>

@@ -20,7 +20,8 @@
                                 <span class="login-text">Username:</span>
                             </td>
                             <td>
-                                <input id="username" name="username" type="text" placeholder="Enter your Username" required>
+                                <input id="username" name="username" type="text" placeholder="Enter your Username"
+                                       required>
                             </td>
                         </div>
                     </tr>
@@ -30,7 +31,7 @@
                                 <span class="login-text">Email:</span>
                             </td>
                             <td>
-                                <input id="login" name="login" type="text" placeholder="Enter your Email" required>
+                                <input id="login" name="login" type="email" placeholder="Enter your Email" required>
                             </td>
                         </div>
                     </tr>
@@ -40,7 +41,8 @@
                                 <span class="login-text">Password:</span>
                             </td>
                             <td>
-                                <input id="password" name="password" type="password" placeholder="Enter your Password" required>
+                                <input id="password" name="password" type="password" placeholder="Enter your Password"
+                                       required>
                             </td>
                         </div>
                     </tr>

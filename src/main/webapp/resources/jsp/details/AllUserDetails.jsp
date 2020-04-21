@@ -37,14 +37,14 @@
                 </thead>
                 <tbody class="table-main-style-body">
 
-                <c:forEach items="${solutions}" var="exercise">
+                <c:forEach items="${solutions}" var="users">
                     <tr>
-                        <td>${exercise.getExerciseName()}</td>
-                        <td>${exercise.getUpdated()}</td>
+                        <td>${users.getExerciseName()}</td>
+                        <td>${users.getUpdated()}</td>
 
                         <td>
                             <div class="details-btn">
-                                <a href="${pageContext.request.contextPath}/app/solutions/details?solution_id=${exercise.getSolutionId()}">Details</a>
+                                <a href="${pageContext.request.contextPath}/app/solutions/details?solution_id=${users.getSolutionId()}">Details</a>
                             </div>
                         </td>
                     </tr>

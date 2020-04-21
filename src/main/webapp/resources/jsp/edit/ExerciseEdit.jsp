@@ -13,20 +13,21 @@
 <%@ include file="../utils/NavBar.jsp" %>
 <div class="main-content">
     <div class="main-content-header">
-        <h2 class="main-header">Add Exercise</h2>
+        <h2 class="main-header">Edit Exercise</h2>
         <div class="sub-content">
 
-            <form action="${pageContext.request.contextPath}/app/admin/exercise/add" method="POST" id="group_form">
+            <form action="${pageContext.request.contextPath}/app/admin/exercise/edit" method="POST" id="group_form">
                 <table>
                     <tr>
                         <td>
-                            <span>Write your Exercise </span>
+                            <span>Edit your Exercise </span>
 
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input name="title" id="exercise-title" placeholder="Write Title">
+                            <input name="title" id="exercise-title" placeholder="Write Title"
+                                   value="${exercise.getTitle()}">
                         </td>
 
                     </tr>
@@ -39,7 +40,7 @@
                     <tr>
                         <td>
                             <textarea name="description" id="exercise-description" rows="10" cols="60"
-                                      placeholder="Enter your description here..."></textarea>
+                                      placeholder="Enter your description here...">${exercise.getDescription()}</textarea>
                         </td>
                     </tr>
                 </table>

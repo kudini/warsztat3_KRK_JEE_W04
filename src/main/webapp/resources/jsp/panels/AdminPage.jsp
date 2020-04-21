@@ -19,20 +19,24 @@
                 <a href="/">Back</a>
             </div>
 
-        <p><h2 class="main-header">Admin Panel</h2></p>
+            <p>
+            <h2 class="main-header">Admin Panel</h2></p>
         </div>
     </div>
     <div class="sub-content">
         <div class="sub-content-table">
             <table class="table-main-style-panels">
                 <tr>
-                    <td><a href="${pageContext.request.contextPath}/app/admin/exercises"><span class="panel-btn">Exercises</span></a></td>
+                    <td><a href="${pageContext.request.contextPath}/app/admin/exercises"><span class="panel-btn">Exercises</span></a>
+                    </td>
                 </tr>
                 <tr>
-                    <td><a href="${pageContext.request.contextPath}/app/admin/user_groups"><span class="panel-btn">User Groups</span></a></td>
+                    <td><a href="${pageContext.request.contextPath}/app/admin/groups"><span class="panel-btn">User Groups</span></a>
+                    </td>
                 </tr>
                 <tr>
-                    <td><a href="${pageContext.request.contextPath}/app/admin/users"><span class="panel-btn">Users</span></a></td>
+                    <td><a href="${pageContext.request.contextPath}/app/admin/users"><span
+                            class="panel-btn">Users</span></a></td>
                 </tr>
             </table>
         </div>

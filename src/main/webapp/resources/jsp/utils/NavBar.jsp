@@ -15,8 +15,11 @@
             <a href="${pageContext.request.contextPath}/app/groups">Users Groups</a>
             <a href="${pageContext.request.contextPath}/app/users">Users</a>
             <a href="${pageContext.request.contextPath}/app/exercises">Exercises</a>
-            <c:if test="${user.getUserGroupId()==1}">
+            <c:if test="${user.getUserGroupId()==initParam['admin-group-id']}">
                 <a href="${pageContext.request.contextPath}/app/admin/panel">Admin Panel</a>
+            </c:if>
+            <c:if test="${user.getUserGroupId()!=initParam['admin-group-id']}">
+                <a href="${pageContext.request.contextPath}/app/user/solutions">My Solutions</a>
             </c:if>
             <a href="${pageContext.request.contextPath}/logout">Logout</a>
         </c:if>
