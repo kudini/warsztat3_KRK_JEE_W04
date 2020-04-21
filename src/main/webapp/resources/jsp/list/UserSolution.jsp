@@ -29,6 +29,9 @@
                             <div class="edit-btn">
                                 <a href="${pageContext.request.contextPath}/app/solutions/edit?solution_id=${users.getSolutionId()}">Edit</a>
                             </div>
+                            <div class="delete-btn">
+                                <a href="${pageContext.request.contextPath}/app/user/solution/delete?solution_id=${users.getSolutionId()}">Delete</a>
+                            </div>
                         </td>
                     </tr>
                 </c:forEach>
