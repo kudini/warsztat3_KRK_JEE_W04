@@ -1,36 +1,47 @@
-DROP DATABASE warsztat3krajee04;
-
-CREATE DATABASE warsztat3krajee04
-    CHARACTER SET utf8mb4
-    COLLATE utf8mb4_unicode_Ci;
-USE warsztat3krajee04;
-
-CREATE TABLE users(
-                     id INT AUTO_INCREMENT,
-                     username VARCHAR(255),
-                     email VARCHAR(255) UNIQUE NOT NULL ,
-                     password VARCHAR(245) NOT NULL ,
-                     PRIMARY KEY (id)
-);
-CREATE TABLE exercises(
-                         id INT PRIMARY KEY AUTO_INCREMENT,
-                         title VARCHAR(255),
-                         description TEXT
+create table exercises
+(
+    id          int auto_increment
+        primary key,
+    title       varchar(255) null,
+    description text         null
 );
 
-CREATE TABLE users_groups(
-                           id INT PRIMARY KEY AUTO_INCREMENT,
-                           name VARCHAR(255)
-
-);
-CREATE TABLE solutions(
-                          id INT(11) PRIMARY KEY AUTO_INCREMENT,
-                          created DATETIME ,
-                          updated DATETIME ,
-                          description TEXT ,
-                          exercise_id INT,
-                          users_id INT,
-                           FOREIGN KEY (exercise_id) REFERENCES exercises(id),
-                           FOREIGN KEY (users_id) REFERENCES  users(id)
+create table solutions
+(
+    id          int auto_increment
+        primary key,
+    created     datetime null,
+    updated     datetime null,
+    description text     null,
+    exercise_id int      null,
+    users_id    int      null,
+    constraint solutions_ibfk_1
+        foreign key (exercise_id) references exercises (id)
 );
 
+create index exercise_id
+    on solutions (exercise_id);
+
+create index users_id
+    on solutions (users_id);
+
+create table users_groups
+(
+    id   int auto_increment
+        primary key,
+    name varchar(255) null
+);
+
+create table users
+(
+    id             int auto_increment
+        primary key,
+    username       varchar(255) null,
+    email          varchar(255) not null,
+    password       varchar(245) not null,
+    users_group_id int          not null,
+    constraint email
+        unique (email),
+    constraint users_group_id
+        foreign key (users_group_id) references users_groups (id)
+);
