@@ -1,19 +1,23 @@
-package pl.coderslab.controller.add;
+package pl.coderslab.controller.panels;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "Register")
-public class Register extends HttpServlet {
+@WebServlet(name = "Logout", urlPatterns = "/logout")
+public class Logout extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//todo
+        HttpSession session = request.getSession();
+        session.removeAttribute("isLogged");
+        session.removeAttribute("user");
+        response.sendRedirect("/");
     }
 }

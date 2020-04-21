@@ -23,6 +23,9 @@ public class UsersDao {
             "SELECT * FROM users";
     private static final String FIND_ALL_BY_ID_USERS_QUERY =
             "SELECT * FROM users WHERE users_group_id = ?";
+    private static final String READ_USER_BY_USERNAME_QUERY =
+            "SELECT * FROM users where email = ?";
+
 
 
     public Users create(Users user) {
@@ -38,7 +41,7 @@ public class UsersDao {
                 user.setId(resultSet.getInt(1));
             }
             return user;
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
@@ -64,6 +67,7 @@ public class UsersDao {
         }
         return null;
     }
+
     public Users[] findAll() {
         try (Connection conn = DBUtils.getConnection()) {
             Users[] users = new Users[0];
@@ -83,6 +87,7 @@ public class UsersDao {
             return null;
         }
     }
+
     public void update(Users user) {
         try (Connection conn = DBUtils.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(UPDATE_USER_QUERY);
@@ -95,6 +100,7 @@ public class UsersDao {
             e.printStackTrace();
         }
     }
+
     public void delete(int userId) {
         try (Connection conn = DBUtils.getConnection()) {
             PreparedStatement statement = conn.prepareStatement(DELETE_USER_QUERY);
@@ -104,9 +110,10 @@ public class UsersDao {
             e.printStackTrace();
         }
     }
-    public Users[] addToArray(Users user,Users[] users){
-        Users[] tmpUsers= Arrays.copyOf(users,users.length+1);
-        tmpUsers[users.length]=user;
+
+    public Users[] addToArray(Users user, Users[] users) {
+        Users[] tmpUsers = Arrays.copyOf(users, users.length + 1);
+        tmpUsers[users.length] = user;
         return tmpUsers;
     }
 
@@ -130,4 +137,27 @@ public class UsersDao {
             return null;
         }
     }
+
+    public Users read(String username) {
+
+        try (Connection connection = DBUtils.getConnection()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(READ_USER_BY_USERNAME_QUERY);
+            preparedStatement.setString(1, username);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                Users user = new Users();
+                user.setId(resultSet.getInt("id"));
+                user.setUsername(resultSet.getString("username"));
+                user.setEmail(resultSet.getString("email"));
+                user.setPassword(resultSet.getString("password"));
+                user.setUserGroupId(resultSet.getInt("users_group_id"));
+                return user;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }
