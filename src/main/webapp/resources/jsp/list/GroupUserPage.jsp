@@ -25,12 +25,12 @@
                 </thead>
                 <tbody class="table-main-style-body">
 
-                <c:forEach items="${usersList}" var="user">
+                <c:forEach items="${usersList}" var="exercise">
                     <tr>
-                        <td>${user.getUsername()}</td>
+                        <td>${exercise.getUsername()}</td>
                         <td>
                             <div class="details-btn">
-                                <a href="${pageContext.request.contextPath}/groups/group/user?user_id=${user.getId()}">Details</a>
+                                <a href="${pageContext.request.contextPath}/app/groups/group/user?user_id=${exercise.getId()}">Details</a>
                             </div>
                         </td>
                     </tr>

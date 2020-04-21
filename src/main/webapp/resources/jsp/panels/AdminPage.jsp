@@ -26,13 +26,13 @@
         <div class="sub-content-table">
             <table class="table-main-style-panels">
                 <tr>
-                    <td><a href="${pageContext.request.contextPath}/admin/exercises"><span class="panel-btn">Exercises</span></a></td>
+                    <td><a href="${pageContext.request.contextPath}/app/admin/exercises"><span class="panel-btn">Exercises</span></a></td>
                 </tr>
                 <tr>
-                    <td><a href="${pageContext.request.contextPath}/admin/user_groups"><span class="panel-btn">User Groups</span></a></td>
+                    <td><a href="${pageContext.request.contextPath}/app/admin/user_groups"><span class="panel-btn">User Groups</span></a></td>
                 </tr>
                 <tr>
-                    <td><a href="${pageContext.request.contextPath}/admin/users"><span class="panel-btn">Users</span></a></td>
+                    <td><a href="${pageContext.request.contextPath}/app/admin/users"><span class="panel-btn">Users</span></a></td>
                 </tr>
             </table>
         </div>

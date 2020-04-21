@@ -13,12 +13,12 @@
 <%@ include file="../utils/NavBar.jsp" %>
 <div class="main-content">
     <div class="main-content-header">
-        <h2>Add Group</h2>
+        <h2 class="main-header">Add Solution</h2>
         <div class="sub-content">
-            <form action="", method="POST" id="group_form">
-                <span>Group name</span>
-                <input type="text">
-
+            <form action="${pageContext.request.contextPath}/app/user/solution/add" method="POST" id="group_form">
+                <span>Write your solution </span>
+                <label for="solution-description">Solution Description</label>
+                <textarea name="solution" id="solution-description" rows="10" cols="60" placeholder="Enter your solution here..." ></textarea>
             </form>
             <br>
             <div>

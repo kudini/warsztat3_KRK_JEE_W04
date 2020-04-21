@@ -12,11 +12,11 @@
             <a href="${pageContext.request.contextPath}/register">Register</a>
         </c:if>
         <c:if test="${isLogged!=null}">
-            <a href="${pageContext.request.contextPath}/groups">Users Groups</a>
-            <a href="${pageContext.request.contextPath}/users">Users</a>
-            <a href="${pageContext.request.contextPath}/exercises">Exercises</a>
+            <a href="${pageContext.request.contextPath}/app/groups">Users Groups</a>
+            <a href="${pageContext.request.contextPath}/app/users">Users</a>
+            <a href="${pageContext.request.contextPath}/app/exercises">Exercises</a>
             <c:if test="${user.getUserGroupId()==1}">
-                <a href="${pageContext.request.contextPath}/admin/panel">Admin Panel</a>
+                <a href="${pageContext.request.contextPath}/app/admin/panel">Admin Panel</a>
             </c:if>
             <a href="${pageContext.request.contextPath}/logout">Logout</a>
         </c:if>

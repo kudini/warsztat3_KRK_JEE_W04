@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "UserDetails", urlPatterns = "/groups/group/user")
+@WebServlet(name = "UserDetails", urlPatterns = "/app/groups/group/user")
 public class UserDetails extends HttpServlet {
     UsersDao usersDao = new UsersDao();
     SolutionsExerciseUsersDao solutionsExerciseUsersDao = new SolutionsExerciseUsersDao();

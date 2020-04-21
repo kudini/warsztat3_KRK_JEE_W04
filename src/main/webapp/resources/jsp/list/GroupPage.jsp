@@ -21,10 +21,14 @@
                 </thead>
                 <tbody class="table-main-style-body">
 
-                <c:forEach items="${usersGroups}" var="user">
+                <c:forEach items="${usersGroups}" var="exercise">
                     <tr>
-                        <td>${user.getName()}</td>
-                        <td><a class="users-btn" href="${pageContext.request.contextPath}/groups/group?user_group_id=${user.getId()}&group_name=${user.getName()}">Users</a></td>
+                        <td>${exercise.getName()}</td>
+                        <td>
+                            <div class="details-btn">
+                                <a href="${pageContext.request.contextPath}/app/groups/group?user_group_id=${exercise.getId()}&group_name=${exercise.getName()}">Users</a>
+                            </div>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>

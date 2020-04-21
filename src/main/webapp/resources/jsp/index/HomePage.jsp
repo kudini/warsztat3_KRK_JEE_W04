@@ -22,14 +22,14 @@
                 </tr>
                 </thead>
                 <tbody class="table-main-style-body">
-                <c:forEach items="${solutionList}" var="user">
+                <c:forEach items="${solutionList}" var="exercise">
                     <tr>
-                        <td>${user.getExerciseName()}</td>
-                        <td>${user.getUsername()}</td>
-                        <td>${user.getUpdated()}</td>
+                        <td>${exercise.getExerciseName()}</td>
+                        <td>${exercise.getUsername()}</td>
+                        <td>${exercise.getUpdated()}</td>
                         <td>
                             <div class="details-btn">
-                                <a href="${pageContext.request.contextPath}/solutions/details?solution_id=${user.getSolutionId()}">Details</a>
+                                <a href="${pageContext.request.contextPath}/app/solutions/details?solution_id=${exercise.getSolutionId()}">Details</a>
                             </div>
                         </td>
                     </tr>

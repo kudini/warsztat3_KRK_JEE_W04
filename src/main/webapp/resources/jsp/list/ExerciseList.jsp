@@ -10,22 +10,27 @@
 
 <div class="main-content">
     <div class="main-content-header">
-        <h2 class="main-header">Users in database:</h2>
+        <h2 class="main-header">Exercise List</h2>
         <div class="sub-content">
             <table class="table-main-style">
                 <thead class="table-main-style-header">
                 <tr>
-                    <td>Username</td>
+                    <td>Exercise Name</td>
+                    <td>Description</td>
                     <td>Actions</td>
                 </tr>
                 </thead>
                 <tbody class="table-main-style-body">
-                <c:forEach items="${usersList}" var="exercise">
+                <c:forEach items="${exercises}" var="exercise">
                     <tr>
-                        <td>${exercise.getUsername()}</td>
-                        <td>
+                        <td>${exercise.getTitle()}</td>
+                        <td>${exercise.getDescription()}</td>
+                        <td class="actions-table-1">
                             <div class="details-btn">
-                                <a href="${pageContext.request.contextPath}/app/users/user?user_id=${exercise.getId()}">Details</a>
+                                <a href="${pageContext.request.contextPath}/app/solutions/list?exercise_id=${exercise.getId()}">List</a>
+                            </div>
+                            <div class="add-btn-table">
+                                <a href="${pageContext.request.contextPath}/app/user/solution/add?exercise_id=${exercise.getId()}">Add</a>
                             </div>
                         </td>
                     </tr>

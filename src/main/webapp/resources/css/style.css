@@ -2,7 +2,7 @@
 #navbar {
     overflow: hidden;
     background-color: #333;
-    min-width: 678px;
+    min-width: 755px;
     grid-area: 1 / 1 / 2 / 6;
 }
 
@@ -40,6 +40,40 @@
 }
 
 /*Buttons*/
+.add-btn a {
+    border-radius: 25px 5px 5px 25px;
+    background-color: #71129a;
+    border-style: solid;
+    border-color: #a718e1;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 7px;
+    border-right-color: #510f70;
+    float: right;
+    display: block;
+    color: #fefefe;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+}
+.add-btn-table a {
+    border-radius: 5px 25px 25px 5px;
+    background-color: #819a15;
+    border-style: solid;
+    border-color: #a7bf15;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 7px;
+    border-right-width: 1px;
+    border-left-color: #4b570b;
+    float: right;
+    display: block;
+    color: #fefefe;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
 .back-btn a {
     border-radius: 25px 5px 5px 25px;
     background-color: #bf8f35;
@@ -60,7 +94,7 @@
     padding: 18px;
 }
 
-.users-btn {
+.users-btn a{
     border-radius: 25px 5px 5px 25px;
     background-color: #bfb894;
     border-style: solid;
@@ -81,9 +115,6 @@
 .details-btn a {
     color: #fefefe;
     text-decoration: none;
-}
-
-.details-btn {
     border-radius: 25px 5px 5px 25px;
     border-style: solid;
     border-color: #bbce61;
@@ -95,14 +126,75 @@
     background-color: #aebf6f;
     float: left;
     display: block;
-    color: #fefefe;
     text-align: center;
-    padding: 10px;
-    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 3px;
 }
 
-.edit-btn {
+.solutions-btn a {
+    border-radius: 5px 5px 5px 5px;
+    border-style: solid;
+    border-color: #ff6300;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 7px;
+    border-right-width: 7px;
+    border-right-color: #853400;
+    border-left-color: #853400;
+    background-color: #ce5200;
+    float: left;
+    display: block;
+    color: #fefefe;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-decoration: none;
 
+}
+.delete-btn a {
+    border-radius: 5px 25px 25px 5px;
+    border-style: solid;
+    border-color: #ff1022;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 7px;
+    border-right-width: 1px;
+    border-left-color: #810a17;
+    background-color: #d50e1f;
+    float: left;
+    display: block;
+    color: #fefefe;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    padding-right: 6px;
+    text-decoration: none;
+}
+.edit-btn a {
+    border-radius: 5px 5px 5px 5px;
+    border-style: solid;
+    border-color: #00aeff;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 7px;
+    border-right-width: 7px;
+    border-left-color: #005a8e;
+    border-right-color: #005a8e;
+    background-color: #0087ce;
+    float: left;
+    display: block;
+    color: #fefefe;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-decoration: none;
 }
 
 /* Navbar links */
@@ -165,6 +257,9 @@
 .table-main-style {
     min-width: 400px;
     border-spacing: 0;
+}
+.table-main-style-body tr {
+    max-width: 70px;
 }
 
 .table-main-style-header {
@@ -229,4 +324,10 @@ body {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0)
+}
+.actions-table-1{
+    min-width: 70px;
+}
+.actions-table-2{
+    min-width: 210px;
 }

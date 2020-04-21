@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "GroupsInfo",urlPatterns = "/groups")
+@WebServlet(name = "GroupsInfo",urlPatterns = "/app/groups")
 public class GroupsInfo extends HttpServlet {
     UsersGroupsDao usersDao = new UsersGroupsDao();
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

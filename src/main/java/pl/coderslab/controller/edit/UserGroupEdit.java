@@ -1,4 +1,4 @@
-package pl.coderslab.controller.add;
+package pl.coderslab.controller.edit;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "UserGroupAdd",urlPatterns = "/app/admin/groups/add")
-public class UserGroupAdd extends HttpServlet {
+@WebServlet(name = "UserGroupEdit",urlPatterns = "/app/admin/group/edit")
+public class UserGroupEdit extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
